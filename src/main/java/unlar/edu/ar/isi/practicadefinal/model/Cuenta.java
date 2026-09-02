@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
 
 public abstract class Cuenta {
@@ -13,6 +12,12 @@ public abstract class Cuenta {
     private double saldo;
     private List <Movimiento> historial;
     
+    public Cuenta(String cbu, double saldo){
+        this.cbu = cbu;
+        this.saldo = saldo;
+        this.historial = new ArrayList();
+
+    }
     public void registrarMovimiento(Movimiento movimiento){
         this.historial.add(movimiento);
     }
