@@ -1,15 +1,25 @@
-package unlar.edu.ar.isi.practicadefinal.model;
+package unlar.edu.ar.isi.practicadefinal.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.annotation.PostConstruct;
 
-public class Service {
+import org.springframework.stereotype.Service;
+
+import jakarta.annotation.PostConstruct;
+import unlar.edu.ar.isi.practicadefinal.model.CajaAhorro;
+import unlar.edu.ar.isi.practicadefinal.model.Cliente;
+import unlar.edu.ar.isi.practicadefinal.model.Cuenta;
+import unlar.edu.ar.isi.practicadefinal.model.CuentaCorriente;
+import unlar.edu.ar.isi.practicadefinal.model.Sucursal;
+
+@Service
+public class BancoService {
 
     private List <Sucursal> sucursales = new ArrayList<>();
     private List <Cliente> clientes = new ArrayList<>();
     private List <Cuenta> cuentas = new ArrayList<>();
-
+    
+    @PostConstruct
     public void inicializarDatos(){
 
         Sucursal sucursal1 = new Sucursal("Sucursal centro", "Avenida San Martin 123");
@@ -35,11 +45,11 @@ public class Service {
         //AGREGAR CLIENTES A CUENTAS
         cliente1.agregarCuenta(cuenta1);
         cliente2.agregarCuenta(cuenta2);
-        
-
-        
-
     }
 
+    //METODO GET CLIENTES
+    public List<Cliente> obtenerClientes(){
+        return clientes;
+    }
 
 }

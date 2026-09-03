@@ -11,7 +11,7 @@ public class Cliente {
     private String email;
     private List<Cuenta> cuentas = new ArrayList<>();
 
-    public void Cliente(String nombre, String dni, String email) {
+    public  Cliente(String nombre, String dni, String email) {
         this.nombre = nombre;
         this.dni = dni;
         this.email = email;
